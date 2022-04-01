@@ -24,7 +24,8 @@ def main():
     # pyramid levels
     levels=5
     
-    url_image = 'https://farm3.staticflickr.com/2794/4190008256_fb66764971_z.jpg'
+    url_image = 'https://farm3.staticflickr.com/2794/4190008256_fb66764971_z.jpg' # http://cocodataset.org/#explore?id=216739
+    #url_image = 'http://farm1.staticflickr.com/106/283322282_c7c58460cc_z.jpg' # https://cocodataset.org/#explore?id=435003 # Luis Simoes thesis
     img = skimage.io.imread(url_image)
     img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
     
