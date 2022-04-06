@@ -11,7 +11,7 @@ These steps assume the Anaconda Python Distribution is used, OpenCV is downloade
 - Open an Anaconda Prompt and [install pybind11](https://anaconda.org/conda-forge/pybind11) and *opencv* packages:
     ```sh
     conda install -c conda-forge pybind11
-	conda install -c conda-forge opencv
+	pip install opencv-python
     ```
 - Clone this repository and create a **build** directory in the root directory (*laplacian-foveation/build*)
 - Open CMake and specify the cloned repository directory as *source* and the created build subdirectory to *build* the binaries
