@@ -22,8 +22,7 @@ set(GLOG_LIB glog)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-set(PYTHON_FILES
-	smooth_foveation.cpp)
+set(PYTHON_FILES smooth_foveation.cpp)
 
 pybind11_add_module(laplacian_foveation src/laplacian_foveation.cpp src/python_bindings/smooth_foveation.cpp src/python_bindings/conversions.cpp)
 target_link_libraries(laplacian_foveation PRIVATE pybind11::module ${OpenCV_LIBS})

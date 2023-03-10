@@ -16,8 +16,8 @@ def main():
     rho=-0.5
 
     # fovea size
-    sigma_xx=70
-    sigma_yy=70
+    sigma_xx=80
+    sigma_yy=80
     #sigma_xy=int(np.floor(rho*sigma_xx*sigma_yy))
     sigma_xy=0
 
@@ -47,19 +47,22 @@ def main():
             #sigma_y=randint(1, sigma_yy)
 
             # random fixation points
-            center=np.array([randint(1,width), randint(1,height)])
+            #center=np.array([randint(1,width), randint(1,height)])
             # fixation at image center
-            #center=[int(width/2.0), int(height/2.0)]
+            center=np.array([int(width/2.0), int(height/2.0)])
 
             # update fovea location
             my_lap_obj.update_fovea(width,height,sigma_x,sigma_y,sigma_xy)
             
             foveated_img=my_lap_obj.Foveate(img,center)
 
+            filename = 'foveated_test_image.png'
+            cv.imwrite(filename, foveated_img)
             cv.waitKey(500)
             #cv.ellipse(foveated_img, center=center, axes=(sigma_xx,sigma_yy), angle=0, startAngle=0, endAngle=360, color=(255,0,0), thickness=2)
             #cv.drawMarker(foveated_img, position=center, color=(255,0,0), markerType=cv.MARKER_CROSS, markerSize=10, thickness=2)
             cv.imshow('image',foveated_img)
+            break
 
     except KeyboardInterrupt:
         print('interrupted!')
@@ -69,4 +72,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
