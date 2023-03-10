@@ -5,9 +5,9 @@
 #include "conversions.h"
 
 #define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
-//#include <numpy/ndarrayobject.h>
+#include <numpy/ndarrayobject.h>
 //#include "c:/Users/%username%/anaconda3/include/numpy/ndarrayobject.h"
-#include "/home/joaoluzio/SceneExploration/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h"
+//#include "C:/Users/%username%/anaconda3/Lib/site-packages/numpy/core/include/numpy/ndarrayobject.h"
 
 #if PY_VERSION_HEX >= 0x03000000
     #define PyInt_Check PyLong_Check

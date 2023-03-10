@@ -16,16 +16,16 @@ def main():
     rho=-0.5
 
     # fovea size
-    sigma_xx=70
-    sigma_yy=70
+    sigma_xx=50
+    sigma_yy=100
     #sigma_xy=int(np.floor(rho*sigma_xx*sigma_yy))
     sigma_xy=0
 
     # pyramid levels
     levels=5
     
-    #url_image = 'https://farm3.staticflickr.com/2794/4190008256_fb66764971_z.jpg' # http://cocodataset.org/#explore?id=216739
-    url_image = 'http://farm1.staticflickr.com/106/283322282_c7c58460cc_z.jpg' # https://cocodataset.org/#explore?id=435003 # Luis Simoes thesis
+    url_image = 'https://farm3.staticflickr.com/2794/4190008256_fb66764971_z.jpg' # http://cocodataset.org/#explore?id=216739
+    #url_image = 'http://farm1.staticflickr.com/106/283322282_c7c58460cc_z.jpg' # https://cocodataset.org/#explore?id=435003 # Luis Simoes thesis
     img = skimage.io.imread(url_image)
     img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
     
@@ -57,8 +57,8 @@ def main():
             foveated_img=my_lap_obj.Foveate(img,center)
 
             cv.waitKey(500)
-            #cv.ellipse(foveated_img, center=center, axes=(sigma_xx,sigma_yy), angle=0, startAngle=0, endAngle=360, color=(255,0,0), thickness=2)
-            #cv.drawMarker(foveated_img, position=center, color=(255,0,0), markerType=cv.MARKER_CROSS, markerSize=10, thickness=2)
+            cv.ellipse(foveated_img, center=center, axes=(sigma_xx,sigma_yy), angle=0, startAngle=0, endAngle=360, color=(255,0,0), thickness=2)
+            cv.drawMarker(foveated_img, position=center, color=(255,0,0), markerType=cv.MARKER_CROSS, markerSize=10, thickness=2)
             cv.imshow('image',foveated_img)
 
     except KeyboardInterrupt:
